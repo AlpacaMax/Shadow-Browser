@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Shadow Browser</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="/static/css/bootstrap.min.css">
+	<script src="/static/js/bootstrap.min.js"></script>
+</head>
+
+<body class="bg-dark">
+	<div class="container-fluid">
+	<div class="row bg-danger text-dark">
+		<div class="col">
+		<h1 class="display-1">Shadow Browser</h1>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col">
+			<h1 class="text-light">
+				<i>Click to launch the Browser!</i>
+			</h1>
+			<button onclick="launchOnClick()" class="btn btn-danger btn-lg text-dark">
+				Launch
+			</button>
+		</div>
+	</div>
+	</div>
+</body>
+</html>
+<script>
+	function launchOnClick(){
+		url = "http://novnc.com/noVNC/vnc.html?host={{ hostname }}&port={{ port }}&password={{ password }}&autoconnect=true&resize=local";
+		window.open(url, 'Shadow Browser', 'width=1024,height=768');
+	}
+</script>
+

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Shadow Browser</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="static/css/bootstrap.min.css">
+	<script src="static/js/bootstrap.min.js"></script>
+</head>
+
+<body class="bg-dark">
+<div class="container-fluid">
+	<div class="row bg-danger text-dark">
+		<div class="col">
+		<h1 class="display-1">Shadow Browser</h1>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col">
+		<form action="?" method="post">
+			<!-- other form fields -->
+
+			<script src="https://authedmine.com/lib/captcha.min.js" async>
+			</script>
+			<script>
+				hostname = "{{ hostname }}"
+				function myCaptchaCallback(token) {
+					url = "http://"+hostname+"/get_browser/"+token;
+					window.location.replace(url);
+				}
+			</script>
+			<h1 class="text-light">
+				<i>Verify to get 10 minutes free browser!</i>
+			</h1>
+			<div class="coinhive-captcha"
+				data-hashes="256"
+				data-key="GeRiysIbuqA5qNRMODerTgX8alhlfu0L"
+				data-whitelabel="false"
+				data-disable-elements="input[type=submit]"
+				data-callback="myCaptchaCallback"
+			>
+				<em>Loading Captcha...<br>
+				If it doesn't load, please disable Adblock!</em>
+			</div>
+
+		</form>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col float-left text-info">
+			<h2><i>{{ available }} browsers available</i></h2>
+		</div>
+		<div class="rol float-right text-danger">
+			<h2><i>{{ inuse }} browsers in-use</i></h2>
+		</div>
+	</div>
+	<div class="progress">
+		<div class="progress-bar bg-info" style="width:{{ per_available }}%">
+		</div>	
+		<div class="progress-bar bg-danger" style="width:{{ per_inuse }}%">
+		</div>
+	</div>
+</div>
+</body>
+</html>
