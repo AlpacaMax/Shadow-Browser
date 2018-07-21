@@ -35,5 +35,8 @@ shadow_browser # docker-compose up
 3. Follow the instructions on the webpage
 4. Enjoy yourself
 
-### Demo
-[shadow-browser](103.115.49.177)
+## Remain issue
+Sound will not be transmitted by server. When you play a video on shadow-browser, you won't hear anything.
+
+## Demo
+[shadow-browser](http://103.115.49.177)
